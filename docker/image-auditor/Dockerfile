@@ -1,4 +1,4 @@
-FROM node:4.3.1
+FROM node:17.7.2
 
 COPY src /opt/app/
 WORKDIR /opt/app/

@@ -39,11 +39,11 @@ socket.bind(9907, () => {
 });
 
 socket.on('message', (msgBuffer, source) => {
-	console.log("Data has arrived: " + msg + ". Source port: " + source.port);
+	console.log("Data has arrived: " + msgBuffer + ". Source port: " + source.port);
     let message = null;
     
     try {
-        message = JSON.parse(msgBuffer.toString('utf8'))
+        message = JSON.parse( msgBuffer.toString('utf8') );
     }
     catch( err ) {
         console.error("Could not parse received JSON data!");
@@ -83,6 +83,8 @@ socket.on('message', (msgBuffer, source) => {
             uuid: message.uuid,
             instrument: msgInstrument,
         };
+
+        activeMusicians.push( musician );
     }
     // checking if the musician changed instrument
     else if ( musician.instrument !== msgInstrument )
@@ -108,5 +110,5 @@ const tcpServer = net.createServer((tcpSocket) => {
 });
 
 tcpServer.listen(2205, () => {
-  console.log('Opened server on', server.address());
+  console.log('Opened server on', tcpServer.address());
 });

@@ -46,4 +46,4 @@ playASound = function() {
 
 }
 
-setInterval(this.playASound.bind(this), 1000);
+setInterval(playASound, 1000);
