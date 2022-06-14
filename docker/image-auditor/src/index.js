@@ -31,14 +31,14 @@ function removeInactiveMusicians()
     );
 }
 
-const socket = dgram.createSocket('udp4');
+const udpSocket = dgram.createSocket('udp4');
 
-socket.bind(9907, () => {
+udpSocket.bind(9907, () => {
     console.log("Joining multicast group");
-    socket.addMembership("239.255.22.5");
+    udpSocket.addMembership("239.255.22.5");
 });
 
-socket.on('message', (msgBuffer, source) => {
+udpSocket.on('message', (msgBuffer, source) => {
 	console.log("Data has arrived: " + msgBuffer + ". Source port: " + source.port);
     let message = null;
     
