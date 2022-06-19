@@ -9,9 +9,9 @@ Reminder: answer the following questions [here](https://forms.gle/6SM7cu4cYhNsRv
 | Question | How can we represent the system in an **architecture diagram**, which gives information both about the Docker containers, the communication protocols and the commands? |
 |          | _Insert your diagram here..._                                |
 | Question | Who is going to **send UDP datagrams** and **when**?         |
-|          | _The `Musician` application send an UDP datagram every second_. |
+|          | _The `Musician` application sends an UDP datagram every second_. |
 | Question | Who is going to **listen for UDP datagrams** and what should happen when a datagram is received? |
-|          | _The `Auditor` application listen for UDP datagrams. When a UDP datagram is received, the data about active musicians should be updated so that they are up-to-date when a TCP client asks for it_. |
+|          | _The `Auditor` application listens for UDP datagrams. When a UDP datagram is received, the data about active musicians should be updated so that they are up-to-date when a TCP client asks for it_. |
 | Question | What **payload** should we put in the UDP datagrams?         |
 |          | _The UDP diagram must contain the sound played and the UUID of the musician_. |
 | Question | What **data structures** do we need in the UDP sender and receiver? When will we update these data structures? When will we query these data structures? |
